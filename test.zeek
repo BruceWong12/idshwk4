@@ -33,7 +33,7 @@ event zeek_init()
 
     SumStats::create([$name = "scanner",
                     $epoch = 10mins,
-                    $reducer = set(r1, r2, r3),
+                    $reducers = set(r1, r2, r3),
                     $epoch_result(ts: time, key: SumStats::Key, result: SumStats::Result) =
                     {
                         if("http_all_resp" in result && "http_404_resp" in result && "http_url_404_resp" in result)
